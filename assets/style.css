@@ -1,0 +1,144 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+
+.container{
+    display: grid;
+    grid-template-areas: 
+    "nav"
+    "filters"
+    "main"
+    "footer";
+grid-template-rows: 60px 60px 1fr 60px;
+width: 100%;
+height: 100vh;
+}
+
+.nav-section{
+    grid-area: nav;
+    background-color:rgb(14, 80, 130) ;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 5px;
+    color:white;
+}
+.nav-section > .logo-container{
+    display: flex;
+    gap:5px;
+}
+.nav-section> .logo-container> .logo, .menu{
+    width: 30px;
+}
+.nav-section >ul{
+    display: none;
+}
+.filters-section{
+    grid-area: filters;
+    background-color: beige;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.filters-section > select{
+    width: 280px;
+    height: 55px;
+    padding-left: 5px;
+
+}
+
+.main-section{
+    grid-area: main;
+    display: flex;
+    flex-direction: column;
+    align-items:center ;
+    padding: 195px;
+}
+
+.main-section > .cards-container{
+    grid-area: main;
+    display: flex;
+    flex-direction: column;
+    align-items:center ;
+    padding:  15px;
+    gap: 10px;
+
+}
+.main-section > .cards-container > .card{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color:white;
+    width: 220px;
+    height: fit-content;
+    padding:35px 0 ;
+    gap: 15px;
+    border-radius: 3px;
+
+}
+.main-section> .cards-container > .card > img{
+    width: 220px;
+
+}
+
+.main-section > .cards-container> .card >button{
+    width: 90px;
+    height: 35px;
+    background-color: gray;
+    color: white;
+    border: none;
+    border border-radius: 5px ;
+}
+
+.foot-section{
+    grid-area: footer;
+    background-color:rgb(10, 46, 74)  ;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+ }
+ .foot-section> div{
+    display: flex;
+    justify-content:center;
+    
+ }
+
+.foot-section>div >img{
+    width: 20px;
+}
+
+@media (min-width: 576px){
+
+    .nav-section{
+        background-color:gray;
+        
+    }
+.container{
+    grid-template-areas: 
+    "nav filters"
+    "nav main"
+    "footer main";
+    grid-template-columns: 150px 1fr;
+    grid-template-rows:  60px 1fr 60px;
+}
+.main-section> .cards-container{
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+.nav-section{
+    flex-direction: column;
+    justify-content: start;
+    gap: 35px;
+    padding: 15px;
+    
+}
+.nav-section>ul{
+    list-style: none;
+}
+
+.nav-section> .logo-container> .logo, .menu{
+    display: none;
+}
+}
