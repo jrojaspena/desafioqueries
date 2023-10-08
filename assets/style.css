@@ -1,8 +1,16 @@
 *{
     padding: 0;
     margin: 0;
+    font-family: 'Indie Flower', cursive;
+   
 }
 
+ main{
+    background-image:url(../assets/fondo1.png) ;
+    background-size:cover;
+    height: 100%;
+    width: 100%;
+ }
 .container{
     display: grid;
     grid-template-areas: 
@@ -17,12 +25,16 @@ height: 100vh;
 
 .nav-section{
     grid-area: nav;
-    background-color:rgb(14, 80, 130) ;
+    background-color:rgb(125, 125, 125);
     display: flex;
     align-items: center;
     justify-content: space-between;
     padding: 5px;
     color:white;
+    
+}
+.nav-section> ul{
+  display: none;
 }
 .nav-section > .logo-container{
     display: flex;
@@ -30,22 +42,35 @@ height: 100vh;
 }
 .nav-section> .logo-container> .logo, .menu{
     width: 30px;
+    color: white;
 }
-.nav-section >ul{
-    display: none;
+.nav-section> .logo-container> h1{
+    font-size: 1em;
+    animation: move 5s infinite;
+
 }
+@keyframes move{
+    from{
+        transform:translateX(0) ;
+    }
+    to{
+        transform: translateX(100px);
+    }
+}
+
 .filters-section{
     grid-area: filters;
-    background-color: beige;
+    background-color:black;
+    color: white;
     display: flex;
     flex-direction: column;
     align-items: center;
+    
 }
 .filters-section > select{
     width: 280px;
-    height: 55px;
+    height: 35px;
     padding-left: 5px;
-
 }
 
 .main-section{
@@ -60,7 +85,7 @@ height: 100vh;
     grid-area: main;
     display: flex;
     flex-direction: column;
-    align-items:center ;
+    align-items:center;
     padding:  15px;
     gap: 10px;
 
@@ -69,37 +94,52 @@ height: 100vh;
     display: flex;
     flex-direction: column;
     align-items: center;
+    text-align: center;
     background-color:white;
+    color:black;
     width: 220px;
-    height: fit-content;
+    height:fit-content;
     padding:35px 0 ;
     gap: 15px;
     border-radius: 3px;
-
 }
-.main-section> .cards-container > .card > img{
-    width: 220px;
 
+.main-section> .cards-container > .card > img{
+    width: 150px;
+    
+}
+.main-section> .cards-container > .card > img:hover{
+    filter: grayscale(1);
 }
 
 .main-section > .cards-container> .card >button{
     width: 90px;
     height: 35px;
-    background-color: gray;
+    background-color:rgb(81, 81, 237);
     color: white;
     border: none;
-    border border-radius: 5px ;
+    border border-radius: 5px ;  
+    transition: all 0.5;
+}
+.main-section > .cards-container> .card >button:hover{
+    width: 90px;
+    height: 40px;
+    background-color:rgb(16, 15, 15);
+    color: white;
+    border: none;
+    border border-radius: 5px ;  
 }
 
 .foot-section{
     grid-area: footer;
-    background-color:rgb(10, 46, 74)  ;
-    color: white;
+    background-color:white;
+    color:black;
     display: flex;
     flex-direction: column;
     text-align: center;
+    width: 100%;
  }
- .foot-section> div{
+ .foot-section> div {
     display: flex;
     justify-content:center;
     
@@ -107,38 +147,61 @@ height: 100vh;
 
 .foot-section>div >img{
     width: 20px;
+    
+}
+.foot-section > div > span{
+    text-align: center;
 }
 
 @media (min-width: 576px){
-
     .nav-section{
-        background-color:gray;
-        
+        background-color: black;
     }
-.container{
-    grid-template-areas: 
-    "nav filters"
-    "nav main"
-    "footer main";
-    grid-template-columns: 150px 1fr;
-    grid-template-rows:  60px 1fr 60px;
-}
-.main-section> .cards-container{
-    flex-direction: row;
-    flex-wrap: wrap;
-}
-.nav-section{
-    flex-direction: column;
-    justify-content: start;
-    gap: 35px;
-    padding: 15px;
     
-}
-.nav-section>ul{
-    list-style: none;
-}
+    .container{
+        grid-template-areas: 
+        "nav filters"
+        "nav main"
+        "footer main";
+        grid-template-columns: 150px 1fr;
+        grid-template-rows:  60px 1fr 60px;
+    }
+    .main-section> .cards-container{
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+    .nav-section{
+        flex-direction: column;
+        justify-content: start;
+        gap: 35px;
+        padding: 15px;
+         
+    }
+    .nav-section> ul{
+        display: contents;
+        text-align: center;
+        color: white;
+    }
+    .nav-section> .menu{
+        display: none;
+       
+    }
+    .navegation> button{
+        width: 30px;
+        height: 30px;
+        background-color: rgb(81, 81, 237);
+        color:white ;
+        transition: all 0.5;   
+    }
+    .navegation> button:hover{
+        width: 40px;
+        height: 40px;
+        background-color:black;
+        color:white ;
+    }
+       
+       
+  
+   
 
-.nav-section> .logo-container> .logo, .menu{
-    display: none;
-}
-}
+
